@@ -1,7 +1,163 @@
+$widthConteiner : 1140px;
+$heigth_tems__full : 180px;
+$heigth_items__line :260px;
+$font-family_Lato: Lato,sans-serif;
+@mixin align_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin font_offer__items__h4(){
+    font-family: $font-family_Lato;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+    font-style: normal;
+    font-weight: normal;
+}
+@mixin font_offer__items__h3(){
+    font-family: $font-family_Lato;
+    font-size: 24px;
+    color: #F16D7F;
+}
+
+
+
 body{
     font-family: Arial,sans-serif;
 }
+
 .conteiner{
-    max-width: 1140px;
+    max-width: $widthConteiner;
     margin: 0 auto;
+}
+
+.header{
+    background-color:  #222222;
+    padding: 20px 0 20px 0;
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        &__logo{
+            &__svg{ 
+                &:not(:last-of-type){
+                    margin-right: 41px;
+                }           
+            }
+        }
+        &__buttons{
+            position: relative;
+            padding-right: 10px;
+            &__svg{ 
+                vertical-align: middle;
+                padding-top: 5px;
+                &:not(:last-of-type){
+                    margin-right: 33px;
+                }           
+            }
+            &__elipce{
+                @include align_center;
+                position: absolute;
+                top: -5%;
+                right: 0%;
+                height: 19px;
+                width: 19px;
+                border-radius: 50%;
+                background: #F16D7F;
+                &__elipce__p{
+                    font-family: $font-family_Lato;
+                    font-size: 12px;
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+}
+.preview{
+    background-color:  #F1E4E6;
+    &__item{
+        display: flex;
+        &__img{
+            // transform: translate(-230px, 0);
+            margin-left: -230px;
+        }
+        &__figcaption{
+            padding: 290px 0 0 60px;
+            &__h2{
+                font-family: Lato;
+                font-style: normal;
+                font-size: 48px;
+                color: #222222;
+                &::before{
+                    border-left: 12px solid #F16D7F;
+                    content: "";
+                    margin-right: 16px;
+                }
+            }
+            &__h4{
+                color: #222222;
+                font-size: 32px;
+                font-size: 37px;
+                &__span{
+                    color: #F16D7F;
+                }
+                &::before{
+                    border-left: 12px solid #F16D7F;
+                    content: "";
+                    margin-right: 16px;
+                }
+            }
+        }
+
+    }
+    
+}
+.offer{
+    padding: 65px 0 96px 0;
+    &__items{
+        &__line{
+            display: flex;
+            height: $heigth_items__line;
+            margin-bottom: 30px;
+            justify-content: space-between;
+            &__item{
+                width: $widthConteiner/3-20;
+                @include align_center;
+                &__first{
+                    background-image: url(img/1-for-woman.png);
+                }
+                &__second{
+                    background-image: url(img/2-for-man.png);
+                }
+                &__third{
+                    background-image: url(img/3-for-kids.png);
+                }
+                &__wrapper{
+                    text-align: center;
+                    &__h4 {
+                    @include font_offer__items__h4;}
+                    &__h3{
+                        @include font_offer__items__h3;
+                    }
+                }
+
+            }
+        }
+        &__full{
+            background-image: url(img/4-ACCESORIES.png);
+            height: $heigth_tems__full;
+            @include align_center;
+            &__wrapper{
+                text-align: center;
+                &__h4 {
+                    @include font_offer__items__h4;
+                }
+                &__h3{
+                    @include font_offer__items__h3;
+                }
+            }
+
+        }
+    }
+
 }
