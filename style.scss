@@ -1,4 +1,7 @@
 $widthConteiner : 1140px;
+$widthConteiner_780 : 780px;
+
+
 $heigth_tems__full : 180px;
 $heigth_items__line :260px;
 $font-family_Lato: Lato,sans-serif;
@@ -21,17 +24,25 @@ $font-family_Lato: Lato,sans-serif;
     color: #F16D7F;
 }
 
+@mixin grid_columns(){
+    grid-template-columns: repeat(3, $widthConteiner/3-20);
+    @media screen and (max-width: 780px){
+        grid-template-columns: repeat(2, $widthConteiner/3-20);
+    }
+}
+
 
 
 body{
     font-family: Arial,sans-serif;
 }
-
 .conteiner{
     max-width: $widthConteiner;
     margin: 0 auto;
+    @media screen and (max-width: 780px){
+        max-width: $widthConteiner_780;
+    }
 }
-
 .header{
     background-color:  #222222;
     padding: 20px 0 20px 0;
@@ -160,4 +171,62 @@ body{
         }
     }
 
+}
+.products{
+    text-align: center;
+    &__h4{
+        font-family: $font-family_Lato;
+        font-size: 30px;
+        color: #222222;
+        margin-bottom: 6px;
+    }
+    &__p{
+        font-family: $font-family_Lato;
+        font-size: 14px;
+        color: #9F9F9F;
+        margin-bottom: 48px;
+    }
+    &__items{
+        display: grid;
+        @include grid_columns;
+        gap: 30px;
+        margin-bottom: 48px;
+        &__item{
+            background: #F8F8F8;
+            &__img{
+                margin-bottom: 25px;
+            }
+            &__text{
+                padding-left: 17px;
+                text-align: left;
+                &__h4{
+                    font-family: $font-family_Lato;
+                    font-size: 13px;
+                    color: #000000;
+                    margin-bottom: 13px;
+                }
+                &__p{
+                    font-family: $font-family_Lato;
+                    font-size: 14px;
+                    color: #5D5D5D;
+                    margin-bottom: 18px;
+                }
+                &__price{
+                    font-family: $font-family_Lato;
+                    font-size: 16px;
+                    color: #F16D7F;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+    &__button{
+        font-family: $font-family_Lato;
+        font-size: 16px;
+        color: #F26376;
+        padding: 15px 40px;
+        border: 1px solid #F26376;
+        background: transparent;
+        margin-bottom: 95px;
+    }
 }
