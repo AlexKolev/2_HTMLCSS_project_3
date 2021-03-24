@@ -1,6 +1,6 @@
 
 $widthConteiner : 1140px;
-$widthConteiner_780 : 780px;
+$widthConteiner_780 : 740px;
 
 $heigth_tems__full : 180px;
 $heigth_items__line :260px;
@@ -26,13 +26,15 @@ $font-family_Lato: Lato, Arial, Helvetica, sans-serif;
 
 @mixin grid_columns(){
     grid-template-columns: repeat(3, $widthConteiner/3-20);
+    gap: 30px;
     @media screen and (max-width: 780px){
         grid-template-columns: repeat(2, $widthConteiner/3-20);
+        gap: 15px;
     }
 }
 
 body{
-    font-family: Arial,sans-serif;
+    font-family: $font-family_Lato;
 }
 .conteiner{
     max-width: $widthConteiner;
@@ -44,6 +46,9 @@ body{
 .header{
     background-color:  #222222;
     padding: 20px 0 20px 0;
+    @media screen and (max-width: 780px){
+        padding: 20px 32px;
+    }
     &__wrapper{
         display: flex;
         justify-content: space-between;
@@ -89,14 +94,25 @@ body{
         display: flex;
         &__img{
             margin-left: -230px;
+            @media screen and (max-width: 780px){
+                height: 368px;
+                width: 368px;
+                margin-left: 0;
+            }    
         }
         &__figcaption{
             padding: 290px 0 0 60px;
+            @media screen and (max-width: 780px){
+                padding: 138px 0 0 40px;
+            }
             &__h2{
                 font-family: Lato;
                 font-style: normal;
-                font-size: 48px;
+               
                 color: #222222;
+                @media screen and (max-width: 780px){
+                    font-size: 44px;
+                }
                 &::before{
                     border-left: 12px solid #F16D7F;
                     content: "";
@@ -107,6 +123,9 @@ body{
                 color: #222222;
                 font-size: 32px;
                 font-size: 37px;
+                @media screen and (max-width: 780px){
+                    font-size: 24px;
+                }
                 &__span{
                     color: #F16D7F;
                 }
@@ -126,6 +145,9 @@ body{
         box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
         padding: 37px 53px 0 24px;
         z-index: -1;
+        @media screen and (max-width: 780px){
+            display: none;
+        }
         &__menu{
             &__h4{
                 font-family: $font-family_Lato;
@@ -164,6 +186,9 @@ body{
 }
 .offer{
     padding: 65px 0 96px 0;
+    @media screen and (max-width: 780px){
+        padding: 20px 0 155px 0;
+    } 
     &__items{
         &__line{
             display: flex;
@@ -172,6 +197,9 @@ body{
             justify-content: space-between;
             &__item{
                 width: $widthConteiner/3-20;
+                @media screen and (max-width: 780px){
+                    width: $widthConteiner_780/3-20;
+                }  
                 @include align_center;
                 &__first{
                     background-image: url(img/1-for-woman.png);
@@ -227,9 +255,11 @@ body{
     }
     &__items{
         display: grid;
-        @include grid_columns;
-        gap: 30px;
+        @include grid_columns;    
         margin-bottom: 48px;
+        @media screen and (max-width: 780px){
+            margin-bottom: 32px;
+        }
         &__item{
             background: #F8F8F8;
             &__imgwrapper{
@@ -299,13 +329,31 @@ body{
         border: 1px solid #F26376;
         background: transparent;
         margin-bottom: 95px;
+        &:hover{
+            background: #F16D7F;
+            color: #FFFFFF;            
+        }
+        @media screen and (max-width: 780px){
+            margin-bottom: 65px;
+            &:hover{
+                background: transparent;
+                color: #F26376;         
+            }
+        }
     }
 }
 .feature{
     background-color: #222224;
     padding: 103px 0 104px;
+    @media screen and (max-width: 780px){
+        padding: 48px 0 16px;
+    }
     &__items{
         display: flex;
+        @media screen and (max-width: 780px){
+            flex-direction: column;
+            align-items: center
+        }
         &__item{
             width: $widthConteiner/3-20;
             text-align: center;
@@ -331,6 +379,9 @@ body{
                 padding: 0 27px;
                 font-weight: 300;
                 line-height: 17px;
+                @media screen and (max-width: 780px){
+                    margin-bottom: 48px;
+                }
             }
         }
     }
@@ -342,10 +393,16 @@ body{
     &__items{
         display: flex;
         align-items: center;
+        @media screen and (max-width: 780px){
+            flex-direction: column;
+        }
         &__info{
             text-align: center;
             width: 360px;
             margin-right: 224px;
+            @media screen and (max-width: 780px){
+                margin-right: 0;
+            }
             &__foto{
                 width: 96px;
                 height: 96px;
@@ -363,6 +420,9 @@ body{
                 color: #222224;
                 &__span{
                     font-style: italic;
+                }
+                @media screen and (max-width: 780px){
+                    margin-bottom: 78px;
                 }
             }
         }
@@ -386,10 +446,11 @@ body{
                 display: flex;
                 justify-content: space-between;
                 background-color: #E1E1E1;
-                border-radius: 14px;
+                border-radius: 20px;
                 margin: 0 97px 0 104px;
+                height: 49px;
                 &__mail{
-                    border-radius: 14px 0 0 14px;
+                    border-radius: 20px 0 0 20px;
                     border: 0 solid;
                     background-color: #E1E1E1;
                     padding-left: 22px;
@@ -402,8 +463,8 @@ body{
                 }
                 &__button{
                     background: #F16D7F;
-                    padding: 7px 7px 6px 8px;
-                    border-radius: 0 14px 14px 0;
+                    padding: 7px 7px 7px 8px;
+                    border-radius: 0 20px 20px 0;
                     font-family: $font-family_Lato;
                     font-size: 14px;
                     color: #FFFFFF;
