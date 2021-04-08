@@ -1,9 +1,15 @@
 
 $widthConteiner : 1140px;
 $widthConteiner_780 : 740px;
+$widthConteiner_380 : 343px;
 
 $heigth_tems__full : 180px;
+$heigth_tems__780 : 116px;
+$heigth_tems__380 : 111px;
 $heigth_items__line :260px;
+$heigth_items__col :247px;
+$width_items__col :343px;
+
 $font-family_Lato: Lato, Arial, Helvetica, sans-serif;
 @mixin align_center {
     display: flex;
@@ -31,6 +37,10 @@ $font-family_Lato: Lato, Arial, Helvetica, sans-serif;
         grid-template-columns: repeat(2, $widthConteiner/3-20);
         gap: 15px;
     }
+    @media screen and (max-width: 380px){
+        grid-template-columns: repeat(1, $widthConteiner/3-20);
+        gap: 15px;
+    }
 }
 
 body{
@@ -42,12 +52,18 @@ body{
     @media screen and (max-width: 780px){
         max-width: $widthConteiner_780;
     }
+    @media screen and (max-width: 380px){
+        max-width: $widthConteiner_380;
+    }
 }
 .header{
     background-color:  #222222;
     padding: 20px 0 20px 0;
     @media screen and (max-width: 780px){
         padding: 20px 32px;
+    }
+    @media screen and (max-width: 380px){
+        padding: 18px 0;
     }
     &__wrapper{
         display: flex;
@@ -62,12 +78,23 @@ body{
         &__buttons{
             position: relative;
             padding-right: 10px;
+            @media screen and (max-width: 380px){
+                padding-right: 0;
+            }
             &__svg{ 
                 vertical-align: middle;
                 padding-top: 5px;
                 &:not(:last-of-type){
                     margin-right: 33px;
-                }           
+                } 
+                @media screen and (max-width: 380px){
+                    &:not(:first-child){
+                        display: none;                      
+                    }
+                    &:not(:last-of-type){
+                        margin-right: 0;
+                    } 
+                }          
             }
             &__elipce{
                 @include align_center;
@@ -78,6 +105,9 @@ body{
                 width: 19px;
                 border-radius: 50%;
                 background: #F16D7F;
+                @media screen and (max-width: 380px){
+                    display: none;
+                }
                 &__elipce__p{
                     font-family: $font-family_Lato;
                     font-size: 12px;
@@ -98,13 +128,19 @@ body{
                 height: 368px;
                 width: 368px;
                 margin-left: 0;
-            }    
+            } 
+            @media screen and (max-width: 380px){
+                display:none;
+            }   
         }
         &__figcaption{
             padding: 290px 0 0 60px;
             @media screen and (max-width: 780px){
                 padding: 138px 0 0 40px;
             }
+            @media screen and (max-width: 380px){
+                padding: 148px 40px;
+            }  
             &__h2{
                 font-family: Lato;
                 font-style: normal;
@@ -113,6 +149,9 @@ body{
                 @media screen and (max-width: 780px){
                     font-size: 44px;
                 }
+                @media screen and (max-width: 380px){
+                    font-size: 38px;
+                } 
                 &::before{
                     border-left: 12px solid #F16D7F;
                     content: "";
@@ -125,6 +164,9 @@ body{
                 font-size: 37px;
                 @media screen and (max-width: 780px){
                     font-size: 24px;
+                }
+                @media screen and (max-width: 380px){
+                    font-size: 20px;
                 }
                 &__span{
                     color: #F16D7F;
@@ -189,17 +231,32 @@ body{
     @media screen and (max-width: 780px){
         padding: 20px 0 155px 0;
     } 
+    @media screen and (max-width: 380px){
+        padding: 64px 16px;
+    }
     &__items{
         &__line{
             display: flex;
             height: $heigth_items__line;
             margin-bottom: 30px;
             justify-content: space-between;
+            @media screen and (max-width: 380px){
+                flex-direction: column;
+                height: auto;
+            } 
+            @media screen and (max-width: 380px){
+                margin-bottom: 0;
+            } 
             &__item{
                 width: $widthConteiner/3-20;
                 @media screen and (max-width: 780px){
                     width: $widthConteiner_780/3-20;
                 }  
+                @media screen and (max-width: 380px){
+                    width: $width_items__col;
+                    height: $heigth_items__line;
+                    margin-bottom: 32px;
+                } 
                 @include align_center;
                 &__first{
                     background-image: url(img/1-for-woman.png);
@@ -225,6 +282,12 @@ body{
             background-image: url(img/4-ACCESORIES.png);
             height: $heigth_tems__full;
             @include align_center;
+            @media screen and (max-width: 780px){
+                height: $heigth_tems__780;
+            }
+            @media screen and (max-width: 380px){
+                height: $heigth_tems__380;
+            }
             &__wrapper{
                 text-align: center;
                 &__h4 {
@@ -241,6 +304,9 @@ body{
 }
 .products{
     text-align: center;
+    @media screen and (max-width: 380px){
+        max-width: $widthConteiner/3-20;
+    }
     &__h4{
         font-family: $font-family_Lato;
         font-size: 30px;
@@ -403,6 +469,9 @@ body{
             @media screen and (max-width: 780px){
                 margin-right: 0;
             }
+            @media screen and (max-width: 380px){
+                width: $widthConteiner_380;
+            }
             &__foto{
                 width: 96px;
                 height: 96px;
@@ -418,16 +487,22 @@ body{
                 font-family: $font-family_Lato;
                 font-size: 20px;
                 color: #222224;
-                &__span{
-                    font-style: italic;
-                }
                 @media screen and (max-width: 780px){
                     margin-bottom: 78px;
                 }
+                @media screen and (max-width: 380px){
+                    font-size: 19px;
+                }
+                &__span{
+                    font-style: italic;
+                }  
             }
         }
         &__frame{
             width: 555px;
+            @media screen and (max-width: 380px){
+                width: $widthConteiner_380;
+            }
             text-align: center;
             &__h3{
                 font-family: $font-family_Lato;
@@ -441,6 +516,9 @@ body{
                 font-size: 18px;  
                 color: #222224;  
                 margin-bottom: 32px;
+                @media screen and (max-width: 380px){
+                    font-size: 14px; 
+                }
             }
             &__input{
                 display: flex;
@@ -449,6 +527,9 @@ body{
                 border-radius: 20px;
                 margin: 0 97px 0 104px;
                 height: 49px;
+                @media screen and (max-width: 380px){
+                    margin: 0; 
+                }
                 &__mail{
                     border-radius: 20px 0 0 20px;
                     border: 0 solid;
@@ -482,10 +563,16 @@ body{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media screen and (max-width: 380px){
+            flex-direction: column-reverse;
+        }
         &__copyR{
             font-family: $font-family_Lato;
             font-size: 16px;
             color: #FBFBFB;
+            @media screen and (max-width: 380px){
+                margin-top: 40px;
+            }
         }
         &__icons{
             display: flex;
