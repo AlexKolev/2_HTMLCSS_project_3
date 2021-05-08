@@ -1,0 +1,44 @@
+@import "vars";
+.footer{
+    background-color: #222224;
+    padding: 24px 0;
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media screen and (max-width: 380px){
+            flex-direction: column-reverse;
+        }
+        &__copyR{
+            font-family: $font-family_Lato;
+            font-size: 16px;
+            color: #FBFBFB;
+            @media screen and (max-width: 380px){
+                margin-top: 40px;
+            }
+        }
+        &__icons{
+            display: flex;
+            justify-content: space-between;
+            &__item{
+                @include align_center;
+                width: 32px;
+                height: 32px;
+                background-color: #FFFFFF;
+                &__svg{
+                    fill: black;
+                }
+                &:not(:last-of-type){
+                    margin-right: 7px;
+                }
+                &:hover{
+                    background-color: #F16D7F;
+                }
+                &:hover .footer__wrapper__icons__item__svg{
+                    fill:  #FFFFFF;;
+                }
+               
+            }
+        }
+    }
+}

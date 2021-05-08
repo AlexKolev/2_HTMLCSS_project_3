@@ -1,0 +1,63 @@
+@import "vars";
+
+.header{
+    background-color:  #222222;
+    padding: 20px 0 20px 0;
+    @media screen and (max-width: 780px){
+        padding: 20px 32px;
+    }
+    @media screen and (max-width: 380px){
+        padding: 18px 0;
+    }
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        &__logo{
+            &__a{ 
+                &:not(:last-of-type){
+                    margin-right: 41px;
+                }           
+            }
+        }
+        &__buttons{
+            position: relative;
+            padding-right: 10px;
+            @media screen and (max-width: 380px){
+                padding-right: 0;
+            }
+            &__svg{ 
+                vertical-align: middle;
+                padding-top: 5px;
+                &:not(:last-of-type){
+                    margin-right: 33px;
+                } 
+                @media screen and (max-width: 380px){
+                    &:not(:first-child){
+                        display: none;                      
+                    }
+                    &:not(:last-of-type){
+                        margin-right: 0;
+                    } 
+                }          
+            }
+            &__elipce{
+                @include align_center;
+                position: absolute;
+                top: -5%;
+                right: 0%;
+                height: 19px;
+                width: 19px;
+                border-radius: 50%;
+                background: #F16D7F;
+                @media screen and (max-width: 380px){
+                    display: none;
+                }
+                &__elipce__p{
+                    font-family: $font-family_Lato;
+                    font-size: 12px;
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+}

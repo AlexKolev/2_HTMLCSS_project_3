@@ -1,0 +1,43 @@
+$widthConteiner : 1140px;
+$widthConteiner_780 : 740px;
+$widthConteiner_380 : 343px;
+
+$heigth_tems__full : 180px;
+$heigth_tems__780 : 116px;
+$heigth_tems__380 : 111px;
+$heigth_items__line :260px;
+$heigth_items__col :247px;
+$width_items__col :343px;
+
+$font-family_Lato: Lato, Arial, Helvetica, sans-serif;
+@mixin align_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin font_offer__items__h4(){
+    font-family: $font-family_Lato;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+    font-style: normal;
+    font-weight: normal;
+}
+@mixin font_offer__items__h3(){
+    font-family: $font-family_Lato;
+    font-size: 24px;
+    color: #F16D7F;
+}
+
+@mixin grid_columns(){
+    grid-template-columns: repeat(3, $widthConteiner/3-20);
+    gap: 30px;
+    @media screen and (max-width: 780px){
+        grid-template-columns: repeat(2, $widthConteiner/3-20);
+        gap: 15px;
+    }
+    @media screen and (max-width: 380px){
+        grid-template-columns: repeat(1, $widthConteiner/3-20);
+        gap: 15px;
+    }
+}

@@ -1,0 +1,146 @@
+@import "scss/vars";
+body{
+    font-family: $font-family_Lato;
+}
+.conteiner{
+    max-width: $widthConteiner;
+    margin: 0 auto;
+    @media screen and (max-width: 780px){
+        max-width: $widthConteiner_780;
+    }
+    @media screen and (max-width: 380px){
+        max-width: $widthConteiner_380;
+    }
+}
+@import "scss/header";
+
+.new_arrivals{
+    background-color:  #F8F3F4;
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        padding: 60px 0px 60px;
+        &__h4{
+            font-family: $font-family_Lato;
+            font-size: 24px;
+            color: #F16D7F;
+        }
+        &__p{
+            font-family: $font-family_Lato;
+            font-size: 14px;
+            color: #636363;
+            &__span{
+                color: #F16D7F;
+            }
+        }
+    }
+}
+
+.products{
+    &__wrapper{
+        display: flex;
+        padding: 51px 0px 64px;
+        justify-content: space-between;
+        &__filter{
+            display: flex;
+            align-items: center;
+            padding-left: 16px;
+            &__p{
+                font-family: $font-family_Lato;
+                font-weight: 600;
+                font-size: 14px;
+                color: #000000;
+                padding-right: 11px;
+            }
+        }
+        &__option{
+            display: flex;
+            align-items: center;
+            &__p{
+                font-family: $font-family_Lato;
+                font-weight: normal;
+                font-size: 14px;
+                color: #6F6E6E;
+                padding-right: 10px;
+            }
+            &__svg{
+                &:not(:last-of-type){
+                    margin-right: 28px;
+                }
+            }
+        }
+    }
+    &__items{
+        display: grid;
+        @include grid_columns;    
+        margin-bottom: 48px;
+        @media screen and (max-width: 780px){
+            margin-bottom: 32px;
+        }
+        &__item{
+            background: #F8F8F8;
+            &__imgwrapper{
+                position: relative;
+                margin-bottom: 25px;
+                &__img{}
+                &__action{
+                    display: none;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    // background-color: rgba(0, 0, 0, 0.6);
+                    background: rgba(58, 56, 56, 0.86);
+                    &__button{
+                        padding: 14px 16px 13px 13px;
+                        background-color: transparent;
+                        border: 1px solid #fff;
+                        color: white;
+                        cursor: pointer;
+                        font-family: $font-family_Lato;
+                        font-size: 14px;
+                        color: #FFFFFF;
+                        @include align_center;
+                        &__svg{
+                            margin-right: 11px;
+                        }
+                    }
+                }
+            }  
+            &__text{
+                padding-left: 17px;
+                text-align: left;
+                &__h4{
+                    font-family: $font-family_Lato;
+                    font-size: 13px;
+                    color: #000000;
+                    margin-bottom: 13px;
+                }
+                &__p{
+                    font-family: $font-family_Lato;
+                    font-size: 14px;
+                    color: #5D5D5D;
+                    margin-bottom: 18px;
+                    font-weight: 300;
+                    line-height: 17px;
+                }
+                &__price{
+                    font-family: $font-family_Lato;
+                    font-size: 16px;
+                    color: #F16D7F;
+                    margin-bottom: 20px;
+                }
+            }
+            &:hover .products__items__item__imgwrapper__action{
+                display: flex;
+            }
+        }
+    }
+    
+}
+
+@import "scss/feature";
+@import "scss/subscribe";
+@import "scss/footer";
